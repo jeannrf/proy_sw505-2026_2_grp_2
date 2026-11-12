@@ -1,6 +1,4 @@
-# Nombre del proyecto
-
-**SiMuLiF: Sistema Municipal de Licencias de Funcionamiento de Establecimientos Comerciales**
+# SiMuLiF: Sistema Municipal de Licencias de Funcionamiento de Establecimientos Comerciales
 
 Curso SW505 Construcción de Software I, ciclo 2026-2, grupo 2 (proyecto 4).
 
