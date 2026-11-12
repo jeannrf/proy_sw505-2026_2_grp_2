@@ -1,84 +1,58 @@
-# SiMuLiF
+# Nombre del proyecto
 
-**Sistema Municipal de Licencias de Funcionamiento**, proyecto 4 del curso SW505 Proceso de Construcción de Software I (ciclo 2026-2), grupo 2.
+**SiMuLiF: Sistema Municipal de Licencias de Funcionamiento de Establecimientos Comerciales**
 
-## ¿Qué es SiMuLiF?
+Curso SW505 Construcción de Software I, ciclo 2026-2, grupo 2 (proyecto 4).
 
-Es una aplicación web que simula cómo una municipalidad distrital del Perú atiende el trámite de licencia de funcionamiento, de principio a fin y sin papeles.
+## Descripción del proyecto
 
-El recorrido de un expediente es el siguiente:
+SiMuLiF es una aplicación web que gestiona el ciclo completo de una solicitud de licencia de funcionamiento en una municipalidad distrital del Perú. El ciudadano hace todo el trámite en línea y cada área de la municipalidad atiende su parte desde el sistema.
 
-- **Registro.** El solicitante, sea persona natural o empresa, registra su local y su giro. El sistema le indica el nivel de riesgo y la lista de requisitos que debe cumplir.
-- **Presentación.** Adjunta sus documentos, paga el derecho de trámite (pago simulado) y envía la solicitud.
-- **Evaluación.** Mesa de partes revisa los requisitos y el evaluador verifica la zonificación. Si el riesgo es alto o muy alto, un inspector realiza la ITSE antes de emitir la licencia. Si hay observaciones, el solicitante las subsana dentro del plazo.
-- **Resultado.** El jefe de licencias aprueba o deniega. Si se aprueba, se genera la licencia en PDF con un código QR que cualquier persona puede verificar en línea.
+El sistema cubre estas etapas:
 
-Es un trabajo académico: no pertenece a ninguna municipalidad, y los plazos, montos y servicios externos (RENIEC, SUNAT, pagos) son simulados.
+1. **Registro** del solicitante (persona natural o jurídica con su representante) y de su establecimiento, con la actividad económica que va a desarrollar.
+2. **Cálculo del nivel de riesgo** del local y de los requisitos que le corresponden.
+3. **Presentación del expediente** con los documentos digitales y el pago del derecho de trámite.
+4. **Validación de requisitos** por mesa de partes.
+5. **Evaluación de zonificación y compatibilidad de uso** del giro en la zona del predio.
+6. **Inspección técnica de seguridad (ITSE)** antes de otorgar la licencia, cuando el riesgo es alto o muy alto.
+7. **Observaciones y subsanaciones** dentro de plazos contados en días hábiles.
+8. **Decisión y emisión** de la licencia en PDF con código QR verificable, o de la resolución de denegatoria.
+9. **Consulta del estado** del trámite por el solicitante y consulta pública por cualquier persona.
 
-## ¿Qué mejora?
+Se basa en la Ley N.° 28976, Ley Marco de Licencia de Funcionamiento, y en el Reglamento de ITSE (D.S. N.° 002-2018-PCM). Es un producto mínimo viable con fines académicos: la licencia, el pago, las notificaciones y las consultas a RENIEC y SUNAT son simulados.
 
-- **Para el ciudadano:** no tiene que ir a ventanilla, conoce los requisitos desde el primer momento y puede ver en línea en qué etapa está su trámite.
-- **Para la municipalidad:** cada funcionario tiene su bandeja de trabajo, los plazos en días hábiles se controlan solos y llegan menos expedientes incompletos.
-- **Para la transparencia:** cada acción sobre un expediente queda registrada, el estado del trámite se puede consultar públicamente y las licencias se validan con el QR.
+**Tecnologías:** React con TypeScript (frontend), Python con FastAPI (backend), PostgreSQL, MongoDB y MinIO (datos y archivos), Nginx (seguridad y entrada), Docker Compose (despliegue).
 
-## Equipo
+## Beneficios de la aplicación
 
-Los tres integrantes desarrollamos como full stack. La división es por documentos de la fase 1, y cada uno es responsable de los suyos.
+- **Reduce los tiempos de atención.** El ciudadano presenta su solicitud en línea, sin hacer colas en ventanilla, y cada funcionario tiene su bandeja con los expedientes que le tocan.
+- **Estandariza los requisitos por procedimiento.** El sistema calcula qué requisitos aplican según el nivel de riesgo y el tipo de solicitante, y no permite presentar un expediente incompleto.
+- **Da trazabilidad y auditoría de cada expediente.** Cada acción queda registrada con su fecha, su usuario y su resultado, y ese registro no se puede modificar.
+- **Permite al ciudadano conocer el estado de su trámite.** Puede consultarlo en cualquier momento y recibe una notificación cada vez que el expediente cambia de etapa.
+- **Controla los plazos legales.** Cuenta días hábiles, alerta antes de los vencimientos y aplica el abandono o el silencio administrativo positivo cuando corresponde.
+- **Hace verificable la licencia.** Cualquier persona puede escanear el QR de la licencia y confirmar que es auténtica y está vigente.
 
-| Integrante | Rol | Documentos a cargo |
+## Integrantes
+
+| Integrante | Rol en el proyecto | Documentos a cargo |
 |---|---|---|
-| Luis Bustamante Rojas | Desarrollador full stack, responsable de requerimientos y análisis | 1, 2 y 3 |
-| Jose Antonio Arredondo Tomairo | Desarrollador full stack, responsable de modelo lógico, casos de uso del sistema y planificación | 4, 5 y 8 |
-| Jeanpier Alexander Robles Fabian | Desarrollador full stack, responsable de base de datos, arquitectura y despliegue | 6, 7 y 9 |
+| Luis Bustamante Rojas | Desarrollador full stack, responsable del análisis de requerimientos y de los casos de uso del negocio | 1. Requerimientos funcionales<br>2. Requerimientos no funcionales<br>3. Análisis: casos de uso del negocio |
+| Jose Antonio Arredondo Tomairo | Desarrollador full stack, responsable del modelo lógico, los casos de uso del sistema y la planificación | 4. Modelo lógico de datos<br>5. Diseño: casos de uso del sistema<br>8. Plan de implementación |
+| Jeanpier Alexander Robles Fabian | Desarrollador full stack, responsable de la base de datos, la arquitectura y el despliegue | 6. Modelo físico de datos<br>7. Diseño de arquitectura<br>9. Guía de despliegue y operaciones |
 
-El docente del curso tiene acceso al repositorio como colaborador.
+## Documentación
 
-## Documentos
+Los entregables están en la carpeta [`Documentos`](Documentos):
 
-Todo está en la carpeta [`Documentos`](Documentos).
-
-**[Análisis y diseño](<Documentos/analisis_y_diseño>)**, entregado en la fase 1 (12/11/2026):
-
-1. [Requerimientos funcionales](<Documentos/analisis_y_diseño/1. Requerimientos funcionales.md>): alcance, usuarios y los 45 requerimientos funcionales.
-2. [Requerimientos no funcionales](<Documentos/analisis_y_diseño/2. Requerimientos no funcionales.md>): restricciones, supuestos, interfaces y 18 requerimientos de calidad.
-3. [Análisis: casos de uso del negocio](<Documentos/analisis_y_diseño/3. Analisis - Casos de uso del negocio.md>): marco normativo, actores, procesos del negocio y reglas de negocio.
-4. [Modelo lógico de datos](<Documentos/analisis_y_diseño/4. Modelo lógico de datos.md>): diagrama entidad-relación, diccionario de datos y modelo documental.
-5. [Diseño: casos de uso del sistema](<Documentos/analisis_y_diseño/5. Diseño - Casos de uso del sistema.md>): 20 casos de uso, estados del expediente y trazabilidad.
-6. [Modelo físico de datos](<Documentos/analisis_y_diseño/6. Modelo físico de datos.md>): tablas en PostgreSQL, colecciones en MongoDB y buckets en MinIO, con sus scripts.
-7. [Diseño de arquitectura](<Documentos/analisis_y_diseño/7. Diseño de arquitectura.md>): las 7 capas, componentes, API, seguridad y despliegue.
-
-**[Implementación y despliegue](<Documentos/implementacion_y_despliegue>)**:
-
-8. [Plan de implementación](<Documentos/implementacion_y_despliegue/8. Plan de implementación.md>): incrementos semanales, reparto de tareas, flujo de trabajo en Git y riesgos.
-9. [Guía de despliegue y operaciones](<Documentos/implementacion_y_despliegue/9. Guía de despliegue y operaciones.md>): instalación con Docker, configuración, respaldos y solución de problemas.
-
-Para la fase 2 se suman el plan y los resultados de pruebas y la documentación del código.
-
-## Stack
-
-- **Frontend:** React 18 con TypeScript y Vite.
-- **Backend:** Python 3.12 con FastAPI.
-- **Datos:** PostgreSQL 16 para la información del trámite, MongoDB 7 para observaciones, inspecciones y bitácora, y MinIO para los archivos.
-- **Seguridad:** Nginx con HTTPS como única entrada, autenticación con JWT y permisos por rol.
-- **Infraestructura:** Docker Compose y GitHub Actions.
-
-## Organización del repositorio
-
-```
-proy_sw505-2026_2_grp_2/
-├── README.md
-└── Documentos/
-    ├── analisis_y_diseño/            documentos 1 al 7
-    └── implementacion_y_despliegue/  documentos 8 y 9
-```
-
-El código (`backend/`, `frontend/`, `database/` y `deploy/`) se agrega durante la fase 2.
-
-## Fechas clave
-
-| Fecha | Qué se entrega |
-|---|---|
-| 12/11/2026 | Fase 1: exposición del análisis y diseño |
-| 19/11/2026 | Incremento 1: base técnica, inicio de sesión, registro y cálculo de riesgo |
-| 26/11/2026 | Incremento 2: presentación, verificación, zonificación y observaciones |
-| 03/12/2026 | Incremento 3 y fase 2: inspección, decisión, licencia con QR y sistema desplegado |
+- [`analisis_y_diseño`](<Documentos/analisis_y_diseño>): documentos 1 al 7, de la exposición del 12/11/2026.
+  - [1. Requerimientos funcionales](<Documentos/analisis_y_diseño/1. Requerimientos funcionales.md>)
+  - [2. Requerimientos no funcionales](<Documentos/analisis_y_diseño/2. Requerimientos no funcionales.md>)
+  - [3. Análisis: casos de uso del negocio](<Documentos/analisis_y_diseño/3. Analisis - Casos de uso del negocio.md>)
+  - [4. Modelo lógico de datos](<Documentos/analisis_y_diseño/4. Modelo lógico de datos.md>)
+  - [5. Diseño: casos de uso del sistema](<Documentos/analisis_y_diseño/5. Diseño - Casos de uso del sistema.md>)
+  - [6. Modelo físico de datos](<Documentos/analisis_y_diseño/6. Modelo físico de datos.md>)
+  - [7. Diseño de arquitectura](<Documentos/analisis_y_diseño/7. Diseño de arquitectura.md>)
+- [`implementacion_y_despliegue`](<Documentos/implementacion_y_despliegue>): documentos 8 y 9.
+  - [8. Plan de implementación](<Documentos/implementacion_y_despliegue/8. Plan de implementación.md>)
+  - [9. Guía de despliegue y operaciones](<Documentos/implementacion_y_despliegue/9. Guía de despliegue y operaciones.md>)
